@@ -1,0 +1,35 @@
+@use "../abstracts/" as *;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  color: #323251;
+  background-color: rgba(234, 243, 241, 0.278);
+  padding-top: var(--mainHeaderHeight);
+  min-width: 320px;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.main-container {
+  padding: 16px;
+}
+
+.main-wrapper {
+  transition: margin-left var(--animationDuration) var(--animationEasing);
+
+  @include media("md") {
+    margin-left: var(--mainSidebarWidth);
+  }
+}

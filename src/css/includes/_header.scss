@@ -1,0 +1,67 @@
+@use "../abstracts/" as *;
+
+.main-header {
+  background-color: white;
+  height: var(--mainHeaderHeight);
+  padding: 8px;
+  border-bottom: 1px solid #ededf5;
+  box-shadow: 0 7px 26px rgb(154 154 204 / 10%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  transition: all var(--animationDuration) var(--animationEasing);
+
+  @include media("md") {
+    width: calc(100% - var(--mainSidebarWidth));
+  }
+
+  .navbar-buttons {
+    font-size: 18px;
+    display: inline-block;
+    background-color: transparent;
+    padding: 8px 0;
+    color: #4a4a69;
+    width: 38px;
+    height: 80%;
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #ededf5;
+    }
+  }
+
+  .navbar-menu {
+    margin-left: auto;
+  }
+
+  .navbar-toggler {
+    &.collapsed {
+      .navbar-toggler-icon:before {
+        content: "\f00d";
+      }
+    }
+  }
+
+  .navbar-brand {
+    transition: all 0.3s var(--animationEasing);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px; //logo height divide by 2
+    margin-left: -69.5px; //logo width divide by 2
+
+    @include media("md") {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
